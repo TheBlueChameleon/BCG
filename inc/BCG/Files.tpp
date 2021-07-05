@@ -6,7 +6,15 @@
 // ========================================================================== //
 // procs
 
-static inline std::fstream BCG::openThrow(const std::string & filename, std::ios_base::openmode mode) {
+static inline std::fstream BCG::openThrow(const std::string & filename,
+                                          const std::ios_base::openmode mode,
+                                          bool noOverwrite) {
+  if (noOverwrite && mode != std::fstream::in) {
+    if (std::filesystem::exists(filename)) {
+      throw std::runtime_error("File " + filename + " already exists");
+    }
+  }
+
   auto reVal = std::fstream(filename, mode);
 
   if ( !reVal.is_open() ) {

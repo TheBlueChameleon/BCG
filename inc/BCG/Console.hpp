@@ -165,11 +165,11 @@ namespace BCG {
    * writeWarning("no value specified\ndefaulting to zero")
    * @endcode
    * produces this output:
-   * @code
-   * Warning
-   *    no value specified
-   *    defaulting to zero
-   * @endcode
+   @verbatim
+   Warning
+      no value specified
+      defaulting to zero
+   @endverbatim
    */
   void writeWarning ( const std::string & text,
                       const std::string & headline = "Warning",
@@ -200,11 +200,11 @@ namespace BCG {
    * writeBoxed("UNIT TEST")
    * @endcode
    * produces this output:
-   * @code
-   * #==============================================================================#
-   * # UNIT TEST                                                                    #
-   * #==============================================================================#
-   * @endcode
+   @verbatim
+   #==============================================================================#
+   # UNIT TEST                                                                    #
+   #==============================================================================#
+   @endverbatim
    */
   void writeBoxed(const std::string & text,
                   const ConsoleColorsTriple & format = {ConsoleColors::FORE_WHITE, ConsoleColors::BACK_BLACK, ConsoleColors::SPC_BOLD_ON},
@@ -249,10 +249,10 @@ namespace BCG {
    * BCG::writeScale(80, 10);
    * @endcode
    * produces
-   * @code
-   *       10      20      30      40      50      60      70      80      90
-   * +------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-   * @endcode
+   @verbatim
+         10      20      30      40      50      60      70      80      90
+   +------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+   @endverbatim
    *
    */
   void writeScale(const int width = 80, int stops = -1,
@@ -278,11 +278,11 @@ namespace BCG {
    * BCG::updateProgressBar(.5);
    * @endcode
    * produces
-   * @code
-   *       10      20      30      40      50      60      70      80      90
-   * +------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-   * ########################################
-   * @endcode
+   @verbatim
+         10      20      30      40      50      60      70      80      90
+   +------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+   ########################################
+   @endverbatim
    *
    * @attention Calling this function very frequently may gravely slow down your
    *  code! You should invoke this at most as often as the on-screen output

@@ -164,10 +164,12 @@ namespace BCG {
    * @attention in its current form, this function can only be called if \c A
    *  and B are instances of \c std::vector<T>. Otherwise you'll get an ugly
    *  errormessage like:<br>
-   *  <pre>In instantiation of ‘double BCG::vector_distance(...)</pre><br>
-   *  <pre>error: no match for call to ‘(std::function&lt;double(...)&gt;</pre>
-   *  See the comments in the tpl for details on why this is, if you want to fix
-   *  this -- or simply convert your input to an std::vector...
+   @verbatim
+   In instantiation of ‘double BCG::vector_distance(...)
+   error: no match for call to ‘(std::function<double(...)>
+   @endverbatim
+   * See the comments in the \c .tpl for details on why this is, if you want to fix
+   * this -- or simply convert your input to an std::vector...
    *
    * @todo fix the normfunc issue
    */
