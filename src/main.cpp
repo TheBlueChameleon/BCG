@@ -24,5 +24,6 @@ int main () {
   unittest_BCG_STRING();
   //unittest_BCG_CONSOLE();
   unittest_BCG_FILES();
+  unittest_BCG_TYPES();
   unittest_BCG_ALL();
 }

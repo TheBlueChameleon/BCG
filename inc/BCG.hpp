@@ -25,6 +25,7 @@
  * - @subpage BCG_String
  * - @subpage BCG_Console
  * - @subpage BCG_Files
+ * - @subpage BCG_Types
  *
  * All symbols and functions of the <em>Blue Chameleon Globals</em> module are
  * defined in the BCG namespace.
@@ -39,9 +40,9 @@
  * * \c BCG_STRING
  * * \c BCG_CONSOLE (will load \c BCG_STRING as well)
  * * \c BCG_FILES
+ * * \c BCG_TYPES
  *
- * @todo finish!
- * @todo include GSL wrapper and matrix
+ * @todo BCG.hpp: include GSL wrapper and matrix
  * @}
  */
 
@@ -56,7 +57,8 @@
       !defined(BCG_VECTOR)  && \
       !defined(BCG_STRING)  && \
       !defined(BCG_CONSOLE) && \
-      !defined(BCG_FILES)
+      !defined(BCG_FILES)   && \
+      !defined(BCG_TYPES)
 #   define BCG_ALL
 # endif
 
@@ -67,6 +69,7 @@
 #   define BCG_STRING
 #   define BCG_CONSOLE
 #   define BCG_FILES
+#   define BCG_TYPES
 # endif
 
 // -------------------------------------------------------------------------- //
@@ -105,6 +108,10 @@
 
 # if defined(BCG_FILES)
 #   include "BCG/Files.hpp"
+# endif
+
+# if defined(BCG_TYPES)
+#   include "BCG/Types.hpp"
 # endif
 
 // ========================================================================= //
