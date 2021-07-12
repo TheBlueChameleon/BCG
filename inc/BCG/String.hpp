@@ -105,10 +105,32 @@ namespace BCG {
    * @param width the width of the resulting string
    * @param fillChar the char with which to pad the resulting string
    *
-   * @note if \c text has more characters than \c width, a
-   *  \c std::invalid_argument is thrown.
+   * @throws std::invalid_argument if \c text has more characters than \c width
    */
-  std::string center(const std::string & text, int width = 80, const char fillChar = ' ');
+  std::string center      (const std::string & text, int width = 80, const char fillChar = ' ');
+
+  /**
+   * @brief returns a copy of a string padded to be \c width characters wide.
+   *
+   * @param text the string to left-justify
+   * @param width the width of the resulting string
+   * @param fillChar the char with which to pad the resulting string
+   *
+   * @throws std::invalid_argument if \c text has more characters than \c width
+   */
+  std::string justifyLeft (const std::string & text, int width = 80, const char fillChar = ' ');
+
+  /**
+   * @brief returns a copy of a string padded from the left to be \c width
+   *    characters wide.
+   *
+   * @param text the string to left-justify
+   * @param width the width of the resulting string
+   * @param fillChar the char with which to pad the resulting string
+   *
+   * @throws std::invalid_argument if \c text has more characters than \c width
+   */
+  std::string justifyRight (const std::string & text, int width = 80, const char fillChar = ' ');
 
   //! @}
 }

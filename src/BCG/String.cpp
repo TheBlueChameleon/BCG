@@ -68,3 +68,15 @@ std::string BCG::center(const std::string & text, int width, const char fillChar
 
   return reVal;
 }
+// .......................................................................... //
+std::string BCG::justifyLeft(const std::string & text, int width, const char fillChar) {
+  int core = text.size();
+  if (core > width) {throw std::invalid_argument(THROWTEXT("   text length exceeds width"));}
+  return text + std::string(width - core, fillChar);
+}
+// .......................................................................... //
+std::string BCG::justifyRight(const std::string & text, int width, const char fillChar) {
+  int core = text.size();
+  if (core > width) {throw std::invalid_argument(THROWTEXT("   text length exceeds width"));}
+  return std::string(width - core, fillChar) + text;
+}
