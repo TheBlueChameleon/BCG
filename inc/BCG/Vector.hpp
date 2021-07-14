@@ -128,7 +128,7 @@ namespace BCG {
    * @param B the source vector for the data to be appended
    */
   template<class T>
-  static inline void appendTo_vector (std::vector<T> & A, const std::vector<T> & B);
+  static inline void append_to_vector (std::vector<T> & A, const std::vector<T> & B);
 
   // ------------------------------------------------------------------------ //
   // show lists and lists of lists Py-Style

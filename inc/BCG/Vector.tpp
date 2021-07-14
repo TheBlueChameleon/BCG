@@ -36,7 +36,7 @@ inline std::vector<T> BCG::concatenate (const std::vector<T> & A, const std::vec
 // .......................................................................... //
 
 template<class T>
-static inline void BCG::appendTo_vector (std::vector<T> & A, const std::vector<T> & B) {
+static inline void BCG::append_to_vector (std::vector<T> & A, const std::vector<T> & B) {
   A.reserve( A.size() + B.size() );
   A.insert ( A.end(), B.begin(), B.end() );
 }

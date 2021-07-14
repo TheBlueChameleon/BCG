@@ -36,10 +36,6 @@ namespace BCG {
   template <class T>
   std::string getTypeIDName(const T& t) {return typeid(t).name();}
 
-//   //! @brief returns the mangled type name of an object (Specialization in Initializer Lists)
-//   template <class T>
-//   std::string getTypeIDName(const T& t) {return typeid(t).name();}
-
   // these codes are copied from or based upon this stackoverflow thread:
   // https://stackoverflow.com/questions/281818/unmangling-the-result-of-stdtype-infoname
 
