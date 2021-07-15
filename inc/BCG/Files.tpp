@@ -11,7 +11,9 @@ static inline std::fstream BCG::openThrow(const std::string & filename,
                                           bool noOverwrite) {
   if (noOverwrite && mode != std::fstream::in) {
     if (std::filesystem::exists(filename)) {
-      throw std::runtime_error("File " + filename + " already exists");
+      throw std::filesystem::filesystem_error(THROWTEXT("    File '" + filename + "' already exists!"),
+                                              std::error_code(static_cast<int>(std::errc::no_such_file_or_directory), std::system_category())
+                                             );
     }
   }
 
@@ -19,6 +21,9 @@ static inline std::fstream BCG::openThrow(const std::string & filename,
 
   if ( !reVal.is_open() ) {
     throw( std::invalid_argument("failed to open '" + filename + "'") );
+    throw std::filesystem::filesystem_error(THROWTEXT("    Failed to open '" + filename + "'"),
+                                            std::error_code(static_cast<int>(std::errc::no_such_file_or_directory), std::system_category())
+                                           );
   }
 
   return reVal;

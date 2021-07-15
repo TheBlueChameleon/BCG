@@ -31,7 +31,7 @@ namespace BCG {
   //! @brief trim whitespaces from the end of the string, in place
   static inline void rtrim(std::string &s);
 
-  //! @brief trim whitespaces from the stard and end of the string, in place
+  //! @brief trim whitespaces from the start and end of the string, in place
   static inline void trim(std::string &s);
 
   //! @brief return a copy where whitespaces from the start of the string are trimmed
