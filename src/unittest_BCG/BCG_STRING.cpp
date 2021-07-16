@@ -26,17 +26,21 @@ void unittest_BCG_STRING() {
   std::string text2 = "text in between $X text in between";
   std::string text3 = "no text to replace";
 
-  std::cout << BCG::replaceAll(text1, "$X", "~ replacement okay ~") << std::endl;
-  std::cout << BCG::replaceAll(text2, "$X", "~ replacement okay ~") << std::endl;
-  std::cout << BCG::replaceAll(text3, "$X", "~ replacement okay ~") << std::endl;
+  std::cout << BCG::replaceAll_copy(text1, "$X", "~ replacement okay ~") << std::endl;
+  std::cout << BCG::replaceAll_copy(text2, "$X", "~ replacement okay ~") << std::endl;
+  std::cout << BCG::replaceAll_copy(text3, "$X", "~ replacement okay ~") << std::endl;
 
-  auto spots1 = BCG::findAll(text1, "$X");
+  BCG::replaceAll(text1, "$X", "$Y");
+  BCG::replaceAll(text2, "$X", "$Y");
+  BCG::replaceAll(text3, "$X", "$Y");
+
+  auto spots1 = BCG::findAll(text1, "$Y");
   for (const auto & s : spots1) {std::cout << s << "\t";}
   std::cout << std::endl;
-  auto spots2 = BCG::findAll(text2, "$X");
+  auto spots2 = BCG::findAll(text2, "$Y");
   for (const auto & s : spots2) {std::cout << s << "\t";}
   std::cout << std::endl;
-  auto spots3 = BCG::findAll(text3, "$X");
+  auto spots3 = BCG::findAll(text3, "$Y");
   for (const auto & s : spots3) {std::cout << s << "\t";}
   std::cout << std::endl;
 

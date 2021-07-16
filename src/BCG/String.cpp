@@ -42,7 +42,7 @@ std::vector<std::string> BCG::splitString(const std::string & s, const char sepa
   return reVal;
 }
 // .......................................................................... //
-std::string BCG::replaceAll(std::string text, const std::string & searchFor, const std::string & replacement) {
+void BCG::replaceAll(std::string & text, const std::string & searchFor, const std::string & replacement) {
   constexpr auto npos = std::string::npos;
 
   size_t spot = 0u;
@@ -52,7 +52,21 @@ std::string BCG::replaceAll(std::string text, const std::string & searchFor, con
 
     text.replace(spot, searchFor.size(), replacement);
   }
-
+}
+// .......................................................................... //
+std::string BCG::replaceAll_copy(std::string text, const std::string & searchFor, const std::string & replacement) {
+//   constexpr auto npos = std::string::npos;
+//
+//   size_t spot = 0u;
+//   while (true) {
+//     spot = text.find(searchFor);
+//     if (spot == npos) {break;}
+//
+//     text.replace(spot, searchFor.size(), replacement);
+//   }
+//
+//   return text;
+  BCG::replaceAll(text, searchFor, replacement);
   return text;
 }
 // .......................................................................... //

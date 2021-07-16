@@ -79,6 +79,16 @@ namespace BCG {
    * @brief searchs for a substring in a text and replaces all occurances
    *    thereof with a given replacement
    *
+   * @param text the string to search in modify
+   * @param searchFor the substring to search for and replace
+   * @param replacement the string to replace \c searchFor with
+   */
+  void replaceAll(std::string & text, const std::string & searchFor, const std::string & replacement);
+
+  /**
+   * @brief searchs for a substring in a text and replaces all occurances
+   *    thereof with a given replacement
+   *
    * @param text the string to search in and return a modified copy
    * @param searchFor the substring to search for and replace
    * @param replacement the string to replace \c searchFor with
@@ -86,7 +96,8 @@ namespace BCG {
    * @returns a copy of \c text where all instances of \c searchFor are replaced
    *    with \c replacement.
    */
-  std::string replaceAll(std::string text, const std::string & searchFor, const std::string & replacement);
+  std::string replaceAll_copy(std::string text, const std::string & searchFor, const std::string & replacement);
+
 
   /**
    * @brief finds all instances of a substring in a given text and returns the
