@@ -72,6 +72,34 @@ namespace BCG {
    */
   std::vector<std::string> splitString(const std::string & s, const char separator = ',');
 
+  // ------------------------------------------------------------------------ //
+  // substring matching and replacement
+
+  /**
+   * @brief searchs for a substring in a text and replaces all occurances
+   *    thereof with a given replacement
+   *
+   * @param text the string to search in and return a modified copy
+   * @param searchFor the substring to search for and replace
+   * @param replacement the string to replace \c searchFor with
+   *
+   * @returns a copy of \c text where all instances of \c searchFor are replaced
+   *    with \c replacement.
+   */
+  std::string replaceAll(std::string text, const std::string & searchFor, const std::string & replacement);
+
+  /**
+   * @brief finds all instances of a substring in a given text and returns the
+   *    positions where the substrings were found
+   *
+   * @param text the string to search in
+   * @param searchFor the substring to search for
+   *
+   * @returns a vector of the positions where \c searchFor was found. If no
+   *    instance if \c searchFor was found, the vector will have no elements.
+   */
+  std::vector<size_t> findAll(const std::string & text, const std::string & searchFor);
+
   // ........................................................................ //
   // wildcard matching
 

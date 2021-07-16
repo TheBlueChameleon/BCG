@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+#include <string>
+
 // own
 #include "BCG.hpp"
 
@@ -35,6 +37,36 @@ std::vector<std::string> BCG::splitString(const std::string & s, const char sepa
 
   if (last != s.size()) {
     reVal.push_back( s.substr(last, s.size() - last) );
+  }
+
+  return reVal;
+}
+// .......................................................................... //
+std::string BCG::replaceAll(std::string text, const std::string & searchFor, const std::string & replacement) {
+  constexpr auto npos = std::string::npos;
+
+  size_t spot = 0u;
+  while (true) {
+    spot = text.find(searchFor);
+    if (spot == npos) {break;}
+
+    text.replace(spot, searchFor.size(), replacement);
+  }
+
+  return text;
+}
+// .......................................................................... //
+std::vector<size_t> BCG::findAll(const std::string & text, const std::string & searchFor) {
+  constexpr auto npos = std::string::npos;
+  std::vector<size_t> reVal;
+
+  size_t spot = 0u;
+  while (true) {
+    spot = text.find(searchFor, spot);
+    if (spot == npos) {break;}
+
+    reVal.push_back(spot);
+    ++spot;
   }
 
   return reVal;

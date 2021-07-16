@@ -62,7 +62,6 @@ namespace BCG {
                                        const std::ios_base::openmode mode = std::fstream::out,
                                        bool noOverwrite = true);
 
-
   /**
    * @brief returns a list of all files that match a given pattern.
    *
